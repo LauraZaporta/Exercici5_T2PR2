@@ -5,6 +5,8 @@ namespace TestEx5_T2PR2
     [TestClass]
     public class UnitTestPersonaHelper
     {
+        // CLASSIFYAGE
+
         [TestMethod]
         public void ClassifyAge_Child()
         {
@@ -64,6 +66,31 @@ namespace TestEx5_T2PR2
             result = PersonaHelper.ClassifyAge(numTest);
             //Assert
             Assert.AreEqual(expectedResult, result);
+        }
+
+        // ISEVEN
+
+        [TestMethod]
+        public void IsEven_ExpectedTrue()
+        {
+            //Arrange
+            int numTest = 10;
+            bool result;
+            //Act
+            result = PersonaHelper.IsEven(numTest);
+            //Assert
+            Assert.IsTrue(result);
+        }
+        [TestMethod]
+        public void IsEven_ExpectedFalse()
+        {
+            //Arrange
+            int numTest = 9;
+            bool result;
+            //Act
+            result = PersonaHelper.IsEven(numTest);
+            //Assert
+            Assert.IsFalse(result);
         }
     }
 }
