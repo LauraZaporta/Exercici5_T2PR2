@@ -186,5 +186,44 @@ namespace TestEx5_T2PR2
             //Assert
             Assert.AreEqual(expectedResult, result);
         }
+
+        // PERSONALITYTEST
+
+        [TestMethod]
+        public void PersonalityTest_Morning()
+        {
+            //Arrange
+            string personalityTest = "matí";
+            int expectedResult = 0;
+            int result;
+            //Act
+            result = PersonaHelper.PersonalityTest(personalityTest);
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+        [TestMethod]
+        public void PersonalityTest_Night()
+        {
+            //Arrange
+            string personalityTest = "nit";
+            int expectedResult = 1;
+            int result;
+            //Act
+            result = PersonaHelper.PersonalityTest(personalityTest);
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+        [TestMethod]
+        public void PersonalityTest_Random()
+        {
+            //Arrange
+            string personalityTest = "aaa";
+            int expectedResult = 2;
+            int result;
+            //Act
+            result = PersonaHelper.PersonalityTest(personalityTest);
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }
