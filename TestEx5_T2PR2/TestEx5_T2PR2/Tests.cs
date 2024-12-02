@@ -147,5 +147,44 @@ namespace TestEx5_T2PR2
             Assert.AreEqual(expectedResultShort, result.IsShort);
             Assert.AreEqual(expectedResultPalindrom, result.IsPalindrome);
         }
+
+        // VERIFYCOLOUR
+
+        [TestMethod]
+        public void VerifyColour_NoColour()
+        {
+            //Arrange
+            string colorTest = "";
+            int expectedResult = -1;
+            int result;
+            //Act
+            result = PersonaHelper.VerifyColour(colorTest);
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+        [TestMethod]
+        public void VerifyColour_ColourCalmant()
+        {
+            //Arrange
+            string colorTest = "BLAU";
+            int expectedResult = 0;
+            int result;
+            //Act
+            result = PersonaHelper.VerifyColour(colorTest);
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+        [TestMethod]
+        public void VerifyColour_ColourExclusiu()
+        {
+            //Arrange
+            string colorTest = "Groc";
+            int expectedResult = 1;
+            int result;
+            //Act
+            result = PersonaHelper.VerifyColour(colorTest);
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }
