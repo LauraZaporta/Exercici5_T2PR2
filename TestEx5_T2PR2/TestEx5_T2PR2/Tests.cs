@@ -92,5 +92,60 @@ namespace TestEx5_T2PR2
             //Assert
             Assert.IsFalse(result);
         }
+
+        // NAMEANALYSER
+
+        [TestMethod]
+        public void NameAnalyser_IsShortAndPalindorme()
+        {
+            //Arrange
+            string nameTest = "ojo";
+            bool expectedResultShort = true;
+            bool expectedResultPalindrom = true;
+            //Act
+            var result = PersonaHelper.NameAnalyser(nameTest);
+            //Assert
+            Assert.AreEqual(expectedResultShort, result.IsShort);
+            Assert.AreEqual(expectedResultPalindrom, result.IsPalindrome);
+        }
+        [TestMethod]
+        public void NameAnalyser_IsShortNotPalindorme()
+        {
+            //Arrange
+            string nameTest = "rata";
+            bool expectedResultShort = true;
+            bool expectedResultPalindrom = false;
+            //Act
+            var result = PersonaHelper.NameAnalyser(nameTest);
+            //Assert
+            Assert.AreEqual(expectedResultShort, result.IsShort);
+            Assert.AreEqual(expectedResultPalindrom, result.IsPalindrome);
+        }
+        [TestMethod]
+        public void NameAnalyser_NotShortAndPalindorme()
+        {
+            //Arrange
+            string nameTest = "arrarra";
+            bool expectedResultShort = false;
+            bool expectedResultPalindrom = true;
+            //Act
+            var result = PersonaHelper.NameAnalyser(nameTest);
+            //Assert
+            Assert.AreEqual(expectedResultShort, result.IsShort);
+            Assert.AreEqual(expectedResultPalindrom, result.IsPalindrome);
+        }
+        [TestMethod]
+        public void NameAnalyser_NotShortAndNotPalindorme()
+        {
+            //Arrange
+            string nameTest = "toroide";
+            bool expectedResultShort = false;
+            bool expectedResultPalindrom = false;
+            //Act
+            var result = PersonaHelper.NameAnalyser(nameTest);
+            //Assert
+            Assert.AreEqual(expectedResultShort, result.IsShort);
+            Assert.AreEqual(expectedResultPalindrom, result.IsPalindrome);
+        }
     }
 }
